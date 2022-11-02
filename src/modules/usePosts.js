@@ -1,6 +1,6 @@
 import { db } from '../firebase.js'
 import { ref } from 'vue' // creating exported function we can use throughout the system
-import { collection, onSnapshot, addDoc/* , doc, deleteDoc, addDoc, updateDoc */ } from "firebase/firestore";
+import { collection, onSnapshot, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 
 const usePosts = () => {
@@ -49,7 +49,7 @@ const firebaseAddSingleItem = async() => {
      // AddItemData.value = ref({ })
     }) // promise
 }  */
-/* 
+ 
 // Make Delete #4.1
 const firebaseDeleteSingleItem = async(id) => {
     await deleteDoc(doc(db, "posts", id))
@@ -60,11 +60,10 @@ const firebaseDeleteSingleItem = async(id) => {
 const firebaseUpdateSingleItem = async(id) => {
 
 await updateDoc(doc(postDataRef, id), {
-  title: posts.value.find(post => post.id === id).title,
-  description: posts.value.find(post => post.id === id).description,
-  quoteNumber: posts.value.find(post => post.id === id).quoteNumber
+  productTitle: posts.value.find(post => post.id === id).productTitle,
+  productPrice: posts.value.find(post => post.id === id).productPrice,
 });
-} */
+} 
 
     return {
         posts,
@@ -72,9 +71,9 @@ await updateDoc(doc(postDataRef, id), {
         AddItemData,
         // myEditor,
         // snackbar,
-        // firebaseDeleteSingleItem,
-         firebaseAddSingleItem,
-        // firebaseUpdateSingleItem
+        firebaseDeleteSingleItem,
+        firebaseAddSingleItem,
+        firebaseUpdateSingleItem
     }
     // blue = variables, yellow = functions
 }

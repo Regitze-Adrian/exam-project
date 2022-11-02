@@ -3,6 +3,7 @@
         <div class="logo"> placeholder </div>
         <div class="links">
             <router-link to="/login"> Login </router-link>
+            <router-link to="/editPostsView"> Edit Products </router-link>
             <router-link to="/"> Home </router-link>
             <router-link to="/products"> Products </router-link>
             <router-link to="/about"> About </router-link>

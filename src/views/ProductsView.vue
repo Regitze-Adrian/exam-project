@@ -2,18 +2,18 @@
     <div>
       
     </div>
-
+<div class="outerProductBox">
     <div class="productBox" v-for="product in posts" :key="product">
         <div class="cardBox">
             <div class="productPhoto">
-                 <img src="../assets/graphicscardone.jpeg" alt="GraphicsCardOne"> 
+                 <v-img src="../assets/graphicscardone.jpeg" alt="GraphicsCardOne" /> 
             </div>
             <div class="infoBox">
                 <div class="productName">  {{product.productTitle}} </div>
                 <div class="productPrice"> {{product.productPrice}} € </div>
-                <v-btn>  </v-btn>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="productCards"> 
@@ -46,15 +46,16 @@ onMounted(() => {
 
 <style lang="scss">
     
-/* .productBox {
+.outerProductBox {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    gap: 50px;
+    margin-top: 70px;
 }
- */
+
 .productCards {
     display: flex;
     justify-content: center;
