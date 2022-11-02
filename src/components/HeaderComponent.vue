@@ -2,18 +2,27 @@
     <header>
         <div class="logo"> placeholder </div>
         <div class="links">
+            <router-link to="/login"> Login </router-link>
             <router-link to="/"> Home </router-link>
             <router-link to="/products"> Products </router-link>
-            <router-link to="/amd"> AMD </router-link>
-            <router-link to="/nvidia"> NVIDIA </router-link>
             <router-link to="/about"> About </router-link>
         </div>
         <div class="shoppingcart"> shoppingcart </div>
+    <div>
+        <button v-if="isLoggedin">
+              <v-btn @click="logOut()">
+              Logout
+            </v-btn>
+        </button>
+        </div>
     </header>
 </template>
 
-<script>
+<script setup>
 
+import useUsers from '@/modules/useUsers'
+
+const { logOut } = useUsers()
 
 </script>
 

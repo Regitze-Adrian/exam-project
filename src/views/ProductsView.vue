@@ -3,7 +3,7 @@
       
     </div>
 
-    <div v-for="product in posts" :key="product">
+    <div class="productBox" v-for="product in posts" :key="product">
         <div class="cardBox">
             <div class="productPhoto">
                  <img src="../assets/graphicscardone.jpeg" alt="GraphicsCardOne"> 
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import usePosts from '@/modeules/usePosts';
+import usePosts from '@/modules/usePosts';
 import { onMounted } from 'vue';
 
 //import ProductComponent from '../components/ProductComponent.vue'
@@ -46,6 +46,15 @@ onMounted(() => {
 
 <style lang="scss">
     
+/* .productBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+ */
 .productCards {
     display: flex;
     justify-content: center;

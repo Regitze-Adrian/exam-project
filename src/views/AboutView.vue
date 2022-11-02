@@ -63,7 +63,7 @@
 // import '@vueup/vue-quill/dist/vue-quill.snow.css';
 //import { ref } from 'vue'
 
-import usePosts from '@/modeules/usePosts';
+import usePosts from '@/modules/usePosts';
 
 const { firebaseAddSingleItem, AddItemData  /* myEditor, , snackbar */ } = usePosts()
 //const description = ref('')
