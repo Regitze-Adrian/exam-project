@@ -34,7 +34,7 @@ const firebaseAddSingleItem = async() => {
     await addDoc(collection(db, "posts"), {
         productTitle: AddItemData.value.productTitle,
         productPrice: AddItemData.value.productPrice,
-
+        productDescription: AddItemData.value.productDescription,
     })
   }
 /* const firebaseAddSingleItem = async() => {
@@ -62,6 +62,7 @@ const firebaseUpdateSingleItem = async(id) => {
 await updateDoc(doc(postDataRef, id), {
   productTitle: posts.value.find(post => post.id === id).productTitle,
   productPrice: posts.value.find(post => post.id === id).productPrice,
+  productDescription: posts.value.find(post => post.id === id).productDescription,
 });
 } 
 

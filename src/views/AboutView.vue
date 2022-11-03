@@ -1,9 +1,5 @@
   <template>
-    <div> 
-      <input type="text" v-model="AddItemData.productTitle" placeholder="Enter a title"><br><br>
-      <input type="text" v-model="AddItemData.productPrice" placeholder="Enter a price"><br><br>
-      <button @click="firebaseAddSingleItem()">Add Static Item</button>
-    </div>
+    <div> hello </div>
    <!--    <v-snackbar
     v-model="snackbar"
   >
@@ -63,9 +59,7 @@
 // import '@vueup/vue-quill/dist/vue-quill.snow.css';
 //import { ref } from 'vue'
 
-import usePosts from '@/modules/usePosts';
 
-const { firebaseAddSingleItem, AddItemData  /* myEditor, , snackbar */ } = usePosts()
 //const description = ref('')
 
 

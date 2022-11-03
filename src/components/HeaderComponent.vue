@@ -2,13 +2,13 @@
     <header>
         <div class="logo"> placeholder </div>
         <div class="links">
-            <router-link to="/login"> Login </router-link>
-            <router-link to="/editPostsView"> Edit Products </router-link>
+            <router-link v-if="!isLoggedin" to="/login"> Login </router-link>
+            <router-link v-if="isLoggedin" to="/editPostsView"> Edit Products </router-link>
             <router-link to="/"> Home </router-link>
             <router-link to="/products"> Products </router-link>
             <router-link to="/about"> About </router-link>
         </div>
-        <div class="shoppingcart"> shoppingcart </div>
+        <div class="shoppingcart"> Cart </div>
     <div>
         <button v-if="isLoggedin">
               <v-btn @click="logOut()">
@@ -23,6 +23,26 @@
 
 import useUsers from '@/modules/useUsers'
 
+import { ref, onMounted } from 'vue'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
+
+let auth
+const isLoggedin = ref(false)
+
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if(user) {
+      isLoggedin.value = true
+    }
+    else {
+      isLoggedin.value = false
+    }
+  })
+})
+
+
 const { logOut } = useUsers()
 
 </script>
@@ -35,7 +55,8 @@ header {
     align-items: center;
     height: 110px;
     width: 100%;
-    background-color: bisque;
+    background-image: linear-gradient(180deg, bisque, rgb(253, 200, 134));
+
 }
 
 .links {

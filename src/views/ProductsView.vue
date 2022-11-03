@@ -2,9 +2,11 @@
     <div>
       
     </div>
-<div class="outerProductBox">
+<div class="outerProductBox"> 
     <div class="productBox" v-for="product in posts" :key="product">
-        <div class="cardBox">
+        <router-link :to="{ name: 'productPage', params:{ id : product.id }}">
+        <div class="cardBox">     
+           
             <div class="productPhoto">
                  <v-img src="../assets/graphicscardone.jpeg" alt="GraphicsCardOne" /> 
             </div>
@@ -13,6 +15,7 @@
                 <div class="productPrice"> {{product.productPrice}} € </div>
             </div>
         </div>
+    </router-link>
     </div>
     </div>
 
@@ -37,15 +40,14 @@ onMounted(() => {
     getPostsData()
 })
 
-// export default {
-//   components: {
-//     ProductComponent,
-// }
-// }
 </script>
 
 <style lang="scss">
     
+body {
+    background-image: linear-gradient(180deg, rgb(31, 15, 72), rgb(85, 32, 169));
+}
+
 .outerProductBox {
     display: flex;
     flex-wrap: wrap;
@@ -69,7 +71,7 @@ onMounted(() => {
     height: 400px;
     width: 270px;
     background-color: rgb(240, 240, 240);
-    filter: drop-shadow(5px 5px 4px #dbdbdb);
+    filter: drop-shadow(5px 5px 4px rgb(16, 8, 37));
     border-radius: 10px;
 }
 
@@ -98,9 +100,9 @@ onMounted(() => {
     text-align: left;
     color: #272727;
 
-    .productName {
+/*     .productName {
         font-weight: 300;
-    }
+    } */
 }
 
 
