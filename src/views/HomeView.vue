@@ -1,13 +1,8 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <section>
-      <div class="hero">
-        <button class="startbtn"> 
-          Let's get shopping! 
-        </button>
+      <div class="hero"> <div class="heroText"> Let's browse!</div> 
       </div>
     </section>
 
@@ -15,39 +10,31 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
-// export default {
-//   name: 'HomeView',
-//   components: {
-//     HelloWorld
-//   }
-// }
 </script>
 
 <style lang="scss" scoped>
   
   .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background-image: url("@/assets/frontpic.jpg");  
     width: 100%;
     height: 600px;
+
   }
 
-.startbtn {
-  width: 200px;
-  height: 60px;
-  color: white;
-  font-size: 18px;
-  background-color: #42b983;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 250px;
-  filter: drop-shadow(5px 5px 4px #dbdbdb)
-}
+  .heroText {
+    font-size: 28px;
+    color: #fff;
+    transform: translate(-180%, -260%);
+  }
 
-button {
-  border: none;
+  @media only screen and (max-width: 768px) {
+    .heroText {
+    transform: translate(-80%, -260%);
+  }
 }
-
 
 </style>

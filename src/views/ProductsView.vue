@@ -20,11 +20,7 @@
     </div>
 
     <div class="productCards"> 
-    <!--     <ProductComponent />
-        <ProductComponent />
-        <ProductComponent />
-        <ProductComponent /> -->
-<!-- add new cards dynamic through firebase -->
+
     </div>
 </template>
 
@@ -32,7 +28,6 @@
 import usePosts from '@/modules/usePosts';
 import { onMounted } from 'vue';
 
-//import ProductComponent from '../components/ProductComponent.vue'
 
 const { posts, getPostsData } = usePosts()
 
@@ -45,7 +40,7 @@ onMounted(() => {
 <style lang="scss">
     
 body {
-    background-image: linear-gradient(180deg, rgb(31, 15, 72), rgb(85, 32, 169));
+    background-color: #FFF;
 }
 
 .outerProductBox {
@@ -64,15 +59,22 @@ body {
     align-items: center;
     gap: 40px;
     margin-top: 50px;
+    border: #272727;
+    
 }
 
+a:link {
+    text-decoration: none;
+}
 
 .cardBox {
     height: 400px;
     width: 270px;
     background-color: rgb(240, 240, 240);
-    filter: drop-shadow(5px 5px 4px rgb(16, 8, 37));
+    filter: drop-shadow(5px 5px 4px rgb(132, 115, 103));
     border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(243, 78, 78);
 }
 
 .productPhoto {
@@ -93,17 +95,13 @@ body {
 
 .infoBox {
     display: flex;
-    justify-content: center; // !!!
-    margin-left: 10%;
-    margin-top: 10%;
+    justify-content: center; 
+    margin: 15px;
     flex-direction: column;
     text-align: left;
     color: #272727;
-
-/*     .productName {
-        font-weight: 300;
-    } */
 }
+
 
 
 </style>

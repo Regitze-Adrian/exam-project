@@ -53,17 +53,6 @@ let filteredPostOnId = computed(() => {
 
 <style lang="scss">
     
-/* .outerProductBox {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-top: 70px;
-}
- */
-
  .productBox {
     display: flex;
  }
@@ -132,5 +121,5 @@ let filteredPostOnId = computed(() => {
     text-align: left;
 }
 
-
+    
 </style>

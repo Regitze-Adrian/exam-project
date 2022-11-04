@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div class="loginBox">
         <v-row>
             <v-col md="6" xs="12" offset-md="3">
                 <h1>Administrator Login</h1>
@@ -18,13 +19,13 @@
                     >
                     </v-text-field>
                     <v-btn
-                        color="primary"
+                        color="light-green-darken-1"
                         @click.prevent="logIn()"
                     >
                         Login
                     </v-btn>
                     <v-btn
-                        color="error"
+                        color="red-darken-1"
                         @click.prevent="logOut()"
                     >
                         LogOut
@@ -32,6 +33,7 @@
                 </div>
             </v-col>
         </v-row>
+    </div>
     </div>
 </template>
 
@@ -45,4 +47,9 @@ const { logIn, logOut, password, email } = useUsers()
 
 <style lang="scss">
     
+.v-row {
+    justify-content: center;
+    margin: 170px;
+}
+
 </style>

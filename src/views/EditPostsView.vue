@@ -8,7 +8,8 @@
       <h2>The price will be displayed in euros.</h2>
     </div>
 
-  <v-card class="bg-teal-lighten-5 pa-5 text-grey-darken-4">
+<div class="outerEditBoxes">
+  <v-card class="bg-red-lighten-5 pa-5 text-grey-darken-4">
     <h3 class="text-grey-darken-2 py-1">New Product</h3>
     
     <QuillEditor toolbar="full" theme="snow" v-model:content="AddItemData.description" 
@@ -17,50 +18,39 @@
     ref="myEditor"
     />
 
-
-    <!-- <v-btn @click="firebaseAddSingleItem()">Add Static Item</v-btn> -->
-
     <div> 
       <input type="text" v-model="AddItemData.productTitle" placeholder="Enter a title"><br><br>
       <input type="text" v-model="AddItemData.productPrice" placeholder="Enter a price"><br><br>
-      <input type="text" v-model="AddItemData.productDescription" placeholder="Enter a description"><br><br>
+      <textarea type="text" v-model="AddItemData.productDescription" placeholder="Enter a description"></textarea><br><br>
       <div class="addButton"><button @click="firebaseAddSingleItem()">ADD DYNAMIC ITEM</button></div>
     </div>
 
     </v-card>
 
-      <v-card class="bg-amber-lighten-4 text-grey-darken-4 ma-5 pa-4" v-for="post in posts" :key="post">
+
+      <v-card class="bg-red-lighten-4 text-grey-darken-4 ma-5 pa-4" v-for="post in posts" :key="post">
         <h5>PostID: {{post.id}}
             <div> 
       <input type="text" v-model="post.productTitle" placeholder="Enter a title"><br><br>
       <input type="text" v-model="post.productPrice" placeholder="Enter a price"><br><br>
-      <input type="text" v-model="post.productDescription" placeholder="Enter a description"><br><br>
-      <v-btn class="bg-red-lighten-3" @click="firebaseDeleteSingleItem(post.id)">delete</v-btn>
-        <v-btn class="bg-blue-lighten-3" @click="firebaseUpdateSingleItem(post.id)">edit item</v-btn>
+      <textarea v-model="post.productDescription" placeholder="Enter a description"> </textarea>  <br><br>
+      <v-btn class="bg-red-darken-1" @click="firebaseDeleteSingleItem(post.id)">delete</v-btn> 
+        <v-btn class="bg-teal-darken-1" @click="firebaseUpdateSingleItem(post.id)">edit item</v-btn>
     </div>
         </h5>
 
-        <!-- <QuillEditor toolbar="full" theme="snow" v-model:content="post.description" contentType="html"/> -->
       </v-card>
+      </div>
     </div>
   </div>
   </template>
   
   <script setup>
-  // import { db } from '../firebase.js'
-//   import { QuillEditor } from '@vueup/vue-quill'
-//   import '@vueup/vue-quill/dist/vue-quill.snow.css';
-
-  // import { onMounted } from 'vue'
   import usePosts from '../modules/usePosts' 
-  // import useUsers from '@/modules/useUsers'
   import { ref, onMounted } from 'vue'
   import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import router from '@/router';
+  import router from '@/router';
   
-  // import {  /* getDocs, */ doc, deleteDoc} from "firebase/firestore";
-  
-  // const posts = ref([]) 
   const { 
     posts, 
     myEditor,
@@ -89,46 +79,51 @@ onMounted(() => {
   })
 })
 
-/*   const { isLoggedin, isLoggedInTest } = useUsers()
-  
-  onMounted(() => {
-    getPostsData(),
-    isLoggedInTest
-  }) // standard structure of onMounted
-  */ 
 </script>
   
 <style lang="scss">
-  
-input {
+
+.outerEditBoxes {
   width: 60%;
+  margin: 0 auto;
+}
+
+input {
+  width: 400px;
+  border-style: solid;
 }
 
 .EditPostText {
-
   margin: 50px;
 
   h1 {
-    color: rgb(234, 232, 235);
+    color: rgb(231, 83, 42);
   }
 
   h2 {
-    color: rgb(208, 198, 211);
+    color: rgb(225, 130, 89);
   }
 }
 .addButton {
   height: 50px;
   width: 200px;
-  background-color: rgb(250, 25, 152);
+  background-color: #e8612c;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 7px;
   margin: 0 auto;
+  color: white;
+}
+ 
+.addButton:hover {
+  background-color: #bc2d1a;
 }
 
-.addButton:hover {
-  background-color: rgb(220, 4, 91);
+textarea {
+  width: 400px;
+  height: 140px;
+  border-style: solid;
 }
 
 </style>

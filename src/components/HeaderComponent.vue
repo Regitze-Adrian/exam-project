@@ -1,20 +1,20 @@
 <template>
     <header>
-        <div class="logo"> placeholder </div>
+        <div class="logo"> </div>
         <div class="links">
             <router-link v-if="!isLoggedin" to="/login"> Login </router-link>
             <router-link v-if="isLoggedin" to="/editPostsView"> Edit Products </router-link>
             <router-link to="/"> Home </router-link>
             <router-link to="/products"> Products </router-link>
-            <router-link to="/about"> About </router-link>
         </div>
-        <div class="shoppingcart"> Cart </div>
-    <div>
+        <div class="shoppingcart"> Cart </div>  
         <button v-if="isLoggedin">
               <v-btn @click="logOut()">
               Logout
             </v-btn>
         </button>
+    <div>
+      
         </div>
     </header>
 </template>
@@ -55,8 +55,7 @@ header {
     align-items: center;
     height: 110px;
     width: 100%;
-    background-image: linear-gradient(180deg, bisque, rgb(253, 200, 134));
-
+    background-image: linear-gradient(180deg, #e8612c, #bc2d1a);
 }
 
 .links {
@@ -67,16 +66,17 @@ header {
     
     a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #f2e5df;
     text-decoration: none;
     padding: 10px;
     margin: 20px;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #f1df17;
     }
   }
 }
+
 
 
 </style>
